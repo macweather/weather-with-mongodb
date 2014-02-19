@@ -15,12 +15,18 @@
 # Dependencies
 #
 
-. lib/bunyan
+. $(/bin/pwd)/lib/bunyan
 
 __bunyanSetLevel "info"
-info "service starts"
 
+info "service starts" >> $HOME/log.txt
 
-info "service ends"
+echo "-->" >> $HOME/log.txt
 
-info "shutting down maschine"
+/usr/local/bin/node $HOME/weather/index.js >> $HOME/log.txt
+
+echo "<--" >> $HOME/log.txt
+
+info "service ends" >> $HOME/log.txt
+
+info "shutting down maschine" >> $HOME/log.txt
