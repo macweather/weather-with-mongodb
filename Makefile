@@ -38,7 +38,7 @@ bunyan:
 	fi;
 
 sync:
-	# rsync ..
+	# rsync to home/weather..
 
 install:
 	crontab bunyan
