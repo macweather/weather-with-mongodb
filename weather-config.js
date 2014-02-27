@@ -4,6 +4,13 @@
 
 var appCfg = {
 
+        mta : {
+            user: process.env.MAILER_ACCESS_KEY,
+            password: process.env.MAILER_SECRET_ACCESS_KEY,
+            host: process.env.MAILER,
+            ssl: true
+        },
+
         aws : {
             key: process.env.AWS_ACCESS_KEY_ID,
             secret: process.env.AWS_SECRET_ACCESS_KEY,
@@ -13,6 +20,18 @@ var appCfg = {
         mongo : {
             server : 'mongodb://localhost:27017',
             database : 'weather',
+        },
+
+        bunyan : {
+
+            name: 'weather',
+            streams: [{
+                type: 'rotating-file',
+                path: process.env.HOME + '/' + 'weather.log',
+                period: '1d',   // daily rotation
+                count: 3        // keep 3 back copies
+            }]
+
         }
 
     };
@@ -26,3 +45,10 @@ appCfg.getMongoConnString = function () {
     return this.mongo.server + '/' + this.mongo.database;
 };
 
+appCfg.getBunyan = function () {
+    return this.bunyan;
+};
+
+appCfg.getMTA = function () {
+    return this.mta;
+};

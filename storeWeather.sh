@@ -23,10 +23,12 @@ info "service starts" >> $HOME/log.txt
 
 echo "-->" >> $HOME/log.txt
 
-/usr/local/bin/node $HOME/weather/index.js >> $HOME/log.txt
+/usr/local/bin/node $HOME/weather/index.js >> $HOME/weather.log
 
 echo "<--" >> $HOME/log.txt
 
 info "service ends" >> $HOME/log.txt
+
+
 
 info "shutting down maschine" >> $HOME/log.txt

@@ -25,6 +25,7 @@ crontab:
 
 	@echo "your changed crontab"
 	@crontab -l
+	sudo service cron restart
 
 bunyan:
 	@# copy './lib/bunyan' to ~/lib/bunyan'
@@ -36,10 +37,3 @@ bunyan:
 	@if [ ! -L $(HOME)/bin/$(BUNYAN) ]; then \
 		ln -s $(CWD)/node_modules/.bin/$(BUNYAN) $(HOME)/bin/$(BUNYAN); \
 	fi;
-
-sync:
-	# rsync to home/weather..
-
-install:
-	crontab bunyan
-
