@@ -28,6 +28,8 @@ Q.when(weather.prepare(proxy))
     .fail(function (err) {
         console.log(err);
     })
-    // Logger einbringen
-    .done();
+    .done(function () {
+        console.log('Fertig');
+    });
+
 
