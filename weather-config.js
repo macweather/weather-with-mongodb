@@ -2,7 +2,8 @@
 
 'use strict';
 
-var appCfg = {
+var bunyan = require('bunyan'),
+    appCfg = {
 
         mta : {
             user: process.env.MAILER_ACCESS_KEY,
@@ -22,7 +23,8 @@ var appCfg = {
             database : 'weather',
         },
 
-        bunyan : {
+        /*
+        logger : bunyan.createLogger({
 
             name: 'weather',
             streams: [{
@@ -32,7 +34,8 @@ var appCfg = {
                 count: 3        // keep 3 back copies
             }]
 
-        }
+        })
+        */
 
     };
 
