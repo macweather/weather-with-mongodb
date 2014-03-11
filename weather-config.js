@@ -19,7 +19,9 @@ var bunyan = require('bunyan'),
         },
 
         mongo : {
-            server : 'mongodb://127.0.0.1:27017',
+//            server : 'mongodb://127.0.0.1:27017',
+
+            server : 'mongodb://sleepy-fox:aerrjfg/( }}!"§$IU=)(@server.mongohq.com:10007',
             database : 'weather',
         },
 
